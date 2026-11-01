@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Agencies & How to Seek Help | El Niño Response System Nigeria</title>
+  <meta name="description" content="Official directory of Nigerian emergency agencies to contact during El Niño: NEMA, NIMET, SEMA, Red Cross, NCDC. Interactive state emergency hotline finder and incident reporting.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- LIVE EMERGENCY TICKER -->
+  <div class="alert-ticker-bar" role="region" aria-label="Live Weather Alert Ticker">
+    <div class="container alert-ticker-container">
+      <div style="display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0;">
+        <span class="ticker-label"><span class="pulse-dot"></span> Emergency Directory</span>
+      </div>
+      <div class="ticker-message">
+        <span class="ticker-text">
+          🚨 <strong>Direct Assistance:</strong> In immediate danger from rising floodwaters or fast-moving bushfires? Dial <strong>112</strong> toll-free nationwide • NEMA Helpdesk: 0800-2255-6362 • Red Cross Community Disaster Response: Active across 36 states and FCT.
+        </span>
+      </div>
+      <div class="ticker-actions">
+        <a href="#stateFinder" class="ticker-link">Search State Hotlines ➜</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE HEADER / NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Naija ClimateWatch Home">
+        <div class="logo-badge">📞</div>
+        <div class="brand-text">
+          <div class="brand-title">Naija<span>ClimateWatch</span></div>
+          <div class="brand-sub">Emergency Agencies & Help System</div>
+        </div>
+      </a>
+
+      <button type="button" class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home & Overview</a></li>
+          <li><a href="prepare-and-survive.html" class="nav-link">Prepare & Survive</a></li>
+          <li><a href="agencies-and-help.html" class="nav-link active">Agencies & Help</a></li>
+          <li><a href="myths-and-facts.html" class="nav-link">Myths vs Facts</a></li>
+          <li>
+            <a href="tel:112" class="nav-cta" title="Call Nigerian National Emergency Toll-Free">
+              <span>🚨</span> Call 112 Toll-Free
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <div class="container page-banner-content">
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+        <span class="badge badge-red">24/7 National Relief Network</span>
+        <span class="badge badge-green">NEMA • SEMA • Red Cross • NIMET</span>
+      </div>
+      <h1 class="page-banner-title">Agencies to Contact & How to Seek Help</h1>
+      <p class="page-banner-subtitle">
+        During climate disasters, swift communication saves communities. Find direct contacts for statutory disaster agencies, locate your specific State SEMA hotline, and follow our step-by-step emergency protocols.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE STATE EMERGENCY FINDER -->
+  <section class="section" id="stateFinder" style="background: linear-gradient(180deg, #09130e 0%, #11261b 100%); color: #fff;">
+    <div class="container">
+      <div class="state-finder-panel">
+        <div class="state-finder-header">
+          <span class="badge badge-amber" style="margin-bottom: 0.75rem;">Interactive Geolocation Directory</span>
+          <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 0.75rem;">Find Your State Emergency Contacts (SEMA)</h2>
+          <p style="color: #cbd5e1; font-size: 1rem;">
+            Select your state or type your state capital to instantly pull verified local SEMA numbers, disaster desks, and zonal priority advice.
+          </p>
+        </div>
+
+        <div class="state-search-box">
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <select id="stateSelectInput" class="form-select" style="flex: 1; min-width: 200px; background-color: #ffffff; color: #0f172a; font-weight: 600;">
+              <option value="">-- Choose Your State --</option>
+              <option value="lagos">Lagos State (LASEMA)</option>
+              <option value="kano">Kano State (Kano SEMA)</option>
+              <option value="rivers">Rivers State (Rivers SEMA)</option>
+              <option value="fct">FCT Abuja (FEMA)</option>
+              <option value="kogi">Kogi State (Kogi SEMA)</option>
+              <option value="benue">Benue State (BSEMA)</option>
+              <option value="oyo">Oyo State (Oyo SEMA)</option>
+              <option value="anambra">Anambra State (Anambra SEMA)</option>
+              <option value="borno">Borno State (Borno SEMA)</option>
+              <option value="enugu">Enugu State (Enugu SEMA)</option>
+              <option value="kaduna">Kaduna State (KADSEMA)</option>
+              <option value="delta">Delta State (Delta SEMA)</option>
+            </select>
+
+            <input type="text" id="stateSearchInput" class="form-input" placeholder="Or search state / capital (e.g. Makurdi, Lagos, Kano)..." style="flex: 1.2; min-width: 220px;">
+          </div>
+        </div>
+
+        <!-- Rendered State Info Container -->
+        <div id="stateResultContainer">
+          <div class="state-result-card" style="text-align: center; color: #94a3b8; padding: 2rem;">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🇳🇬</div>
+            <p>Select your state from the dropdown or type in the search bar above to view direct hotlines, headquarters address, and priority El Niño advisories.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY NIGERIAN AGENCIES DIRECTORY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Statutory Bodies</span>
+        <h2 class="section-title">Key National Agencies & Mandates</h2>
+        <p class="section-subtitle">
+          These federal and civic institutions coordinate disaster risk reduction, meteorological forecasting, relief distribution, and medical crisis response across Nigeria.
+        </p>
+      </div>
+
+      <div class="card-grid-3">
+        <!-- Agency 1: NEMA -->
+        <div class="agency-card">
+          <div class="agency-header">
+            <div class="agency-logo-wrap" style="color: #dc2626;">🚨</div>
+            <div>
+              <h3 class="agency-name-title">NEMA</h3>
+              <div class="agency-role-badge">National Emergency Management Agency</div>
+            </div>
+          </div>
+          <p class="card-text">
+            The federal body coordinating disaster prevention, response, and post-climate relief. Manages emergency relief grain reserves, mobile camps, and rescue helicopters.
+          </p>
+          <ul class="agency-contacts-list">
+            <li class="contact-row">
+              <span>National Toll-Free:</span>
+              <a href="tel:080022556362" class="contact-hotline">0800-CALL-NEMA</a>
+            </li>
+            <li class="contact-row">
+              <span>National Emergency Line:</span>
+              <a href="tel:112" class="contact-hotline">112 (All Networks)</a>
+            </li>
+            <li class="contact-row">
+              <span>Headquarters:</span>
+              <span>Plot 439 Adetokunbo Ademola, Wuse II, Abuja</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Agency 2: NIMET -->
+        <div class="agency-card">
+          <div class="agency-header">
+            <div class="agency-logo-wrap" style="color: #0284c7;">🌦️</div>
+            <div>
+              <h3 class="agency-name-title">NIMET</h3>
+              <div class="agency-role-badge">Nigerian Meteorological Agency</div>
+            </div>
+          </div>
+          <p class="card-text">
+            Provides daily weather advisories, seasonal climate predictions (SCP), dry spell warnings, and early warning radar alerts for agriculture and civil defense.
+          </p>
+          <ul class="agency-contacts-list">
+            <li class="contact-row">
+              <span>General Enquiries:</span>
+              <a href="tel:092913333" class="contact-hotline">09-2913333 / 09-2913334</a>
+            </li>
+            <li class="contact-row">
+              <span>Website Portal:</span>
+              <a href="https://nimet.gov.ng" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: 600;">www.nimet.gov.ng</a>
+            </li>
+            <li class="contact-row">
+              <span>Headquarters:</span>
+              <span>Bill Clinton Drive, Nnamdi Azikiwe Airport, Abuja</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Agency 3: Red Cross -->
+        <div class="agency-card">
+          <div class="agency-header">
+            <div class="agency-logo-wrap" style="color: #ef4444;">⛑️</div>
+            <div>
+              <h3 class="agency-name-title">Nigerian Red Cross</h3>
+              <div class="agency-role-badge">Humanitarian Relief & First Aid</div>
+            </div>
+          </div>
+          <p class="card-text">
+            Specialized in grassroot community rescue, emergency first aid, setting up temporary flood displacement tents, and water purification tablet distribution.
+          </p>
+          <ul class="agency-contacts-list">
+            <li class="contact-row">
+              <span>Disaster Helpline:</span>
+              <a href="tel:08037000888" class="contact-hotline">0803-700-0888 / 0802-300-4567</a>
+            </li>
+            <li class="contact-row">
+              <span>Presence:</span>
+              <span>Branches in all 774 Local Government Areas (LGAs)</span>
+            </li>
+            <li class="contact-row">
+              <span>Website:</span>
+              <a href="https://redcrossnigeria.org" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: 600;">redcrossnigeria.org</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Agency 4: NCDC & FMOH -->
+        <div class="agency-card">
+          <div class="agency-header">
+            <div class="agency-logo-wrap" style="color: #059669;">🏥</div>
+            <div>
+              <h3 class="agency-name-title">NCDC / FMOH</h3>
+              <div class="agency-role-badge">Disease Outbreak & Health Surveillance</div>
+            </div>
+          </div>
+          <p class="card-text">
+            Monitors El Niño-related outbreaks including Cholera in flood zones and Cerebrospinal Meningitis (CSM) in scorching Northern savannas.
+          </p>
+          <ul class="agency-contacts-list">
+            <li class="contact-row">
+              <span>NCDC Toll-Free:</span>
+              <a href="tel:6232" class="contact-hotline">6232 (Toll-Free)</a>
+            </li>
+            <li class="contact-row">
+              <span>WhatsApp Alert:</span>
+              <span style="font-weight: 600; color: #065f46;">0708 711 0839</span>
+            </li>
+            <li class="contact-row">
+              <span>Headquarters:</span>
+              <span>Plot 801 Ebitu Ukiwe St, Jabi, Abuja</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Agency 5: Fire Service -->
+        <div class="agency-card">
+          <div class="agency-header">
+            <div class="agency-logo-wrap" style="color: #b45309;">🚒</div>
+            <div>
+              <h3 class="agency-name-title">Federal & State Fire</h3>
+              <div class="agency-role-badge">Wildfire & Electrical Infernos</div>
+            </div>
+          </div>
+          <p class="card-text">
+            Rapid mobilization for bushfires, market fires, and residential blazes exacerbated by 40°C+ ambient temperatures and dried vegetation.
+          </p>
+          <ul class="agency-contacts-list">
+            <li class="contact-row">
+              <span>National Fire Line:</span>
+              <a href="tel:112" class="contact-hotline">112 or 0803-200-3556</a>
+            </li>
+            <li class="contact-row">
+              <span>State Fire Units:</span>
+              <span>Operating in all State Capitals & Major Commercial Towns</span>
+            </li>
+            <li class="contact-row">
+              <span>Priority Alert:</span>
+              <span>Do not attempt to fight massive bushfires with tree branches</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Agency 6: Ministry of Agriculture -->
+        <div class="agency-card">
+          <div class="agency-header">
+            <div class="agency-logo-wrap" style="color: #008751;">🌾</div>
+            <div>
+              <h3 class="agency-name-title">FMAFS & Extension</h3>
+              <div class="agency-role-badge">Federal Ministry of Agriculture</div>
+            </div>
+          </div>
+          <p class="card-text">
+            Distributes subsidized drought-tolerant hybrid seeds, coordinates with Agricultural Development Programmes (ADPs), and provides post-drought compensation.
+          </p>
+          <ul class="agency-contacts-list">
+            <li class="contact-row">
+              <span>Farmers Hotline:</span>
+              <a href="tel:08003623724" class="contact-hotline">0800-FARM-NIGERIA</a>
+            </li>
+            <li class="contact-row">
+              <span>Seed Certification:</span>
+              <span>National Agricultural Seeds Council (NASC)</span>
+            </li>
+            <li class="contact-row">
+              <span>Website:</span>
+              <a href="https://agriculture.gov.ng" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: 600;">agriculture.gov.ng</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO SEEK HELP: STEP-BY-STEP EMERGENCY PROTOCOLS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Emergency Protocols</span>
+        <h2 class="section-title">How to Seek Help in a Crisis</h2>
+        <p class="section-subtitle">
+          Knowing what exact information to provide during an emergency call dramatically cuts down response time for rescue teams.
+        </p>
+      </div>
+
+      <div class="card-grid-2">
+        <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--color-gray-200);">
+          <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem;">
+            <span class="badge badge-red">Scenario 1</span>
+            <h3 style="font-size: 1.25rem; color: #0f172a;">Trapped by Rapid Flash Floods</h3>
+          </div>
+          <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.92rem; color: #475569;">
+            <li><strong>Climb to the highest accessible structural point:</strong> (Roof, reinforced upper balcony, or strong tree). Avoid attics without escape hatches to the roof.</li>
+            <li><strong>Call 112 immediately:</strong> Clearly state: (a) Your State, LGA, and specific landmark/street name; (b) Number of people trapped, including infants or elderly; (c) Water level height (e.g., waist-level, chest-level).</li>
+            <li><strong>Signal rescue teams:</strong> Hang bright clothing (red, orange, yellow wrapper/shirt) on the exterior or turn on mobile phone torches intermittently.</li>
+            <li><strong>Do not attempt swimming:</strong> Never venture into muddy flood currents—submerged wires, debris, and undertows can overpower strong swimmers.</li>
+          </ol>
+        </div>
+
+        <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--color-gray-200);">
+          <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem;">
+            <span class="badge badge-amber">Scenario 2</span>
+            <h3 style="font-size: 1.25rem; color: #0f172a;">Severe Heatstroke / Medical Collapse</h3>
+          </div>
+          <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.92rem; color: #475569;">
+            <li><strong>Move the victim immediately into shade:</strong> Take them indoors or under a dense tree away from direct sunlight.</li>
+            <li><strong>Rapid physical cooling:</strong> Loosen tight clothing; sponge their head, neck, armpits, and groin with cool (not ice-cold) water. Fan them vigorously.</li>
+            <li><strong>Administer fluids ONLY if conscious:</strong> If awake and coherent, give small sips of clean water or ORS. <em>Never force liquids into an unconscious person.</em></li>
+            <li><strong>Transport to Primary Health Centre (PHC):</strong> Contact local Red Cross volunteers or transport immediately for IV saline therapy.</li>
+          </ol>
+        </div>
+
+        <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--color-gray-200);">
+          <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem;">
+            <span class="badge badge-green">Scenario 3</span>
+            <h3 style="font-size: 1.25rem; color: #0f172a;">Farmer Disaster Relief Application</h3>
+          </div>
+          <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.92rem; color: #475569;">
+            <li><strong>Document crop / livestock loss:</strong> Take clear photographs or video evidence of scorched crops, dry irrigation furrows, or dead poultry/livestock.</li>
+            <li><strong>Report to Local Government Council (LGA) Agric Officer:</strong> Request an official verification visit and damage assessment form.</li>
+            <li><strong>Register with your State Agricultural Development Programme (ADP):</strong> Ensure your Farmer ID number is attached to your cooperative union.</li>
+            <li><strong>Submit formal claim to NEMA / SEMA Disaster Relief Desk:</strong> Attach photos, community village head endorsement letter, and farm coordinate details.</li>
+          </ol>
+        </div>
+
+        <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--color-gray-200);">
+          <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem;">
+            <span class="badge badge-blue">Scenario 4</span>
+            <h3 style="font-size: 1.25rem; color: #0f172a;">Community Mutual Aid & Alert Organizing</h3>
+          </div>
+          <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.92rem; color: #475569;">
+            <li><strong>Form a Community Climate Committee:</strong> Collaborate with your Community Development Association (CDA), Landlord Association, or Ward Elders.</li>
+            <li><strong>Identify vulnerable neighbors:</strong> Map out where elderly citizens living alone, disabled residents, and pregnant mothers reside for priority assistance.</li>
+            <li><strong>Set up an emergency whistle or megaphone warning:</strong> Establish a distinct whistle code for impending flood surges or approaching bushfires.</li>
+            <li><strong>Maintain clean neighborhood drains:</strong> Organize bi-weekly sanitation exercises to ensure stormwater drains stay unobstructed.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CITIZEN INCIDENT REPORT SIMULATOR -->
+  <section class="section" id="incidentReportSection">
+    <div class="container">
+      <div class="incident-form-box">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 2rem;">
+          <span class="badge badge-green" style="margin-bottom: 0.5rem;">Citizen Helpdesk Simulation</span>
+          <h2 style="font-size: 2rem; color: #0f172a; margin-bottom: 0.5rem;">Report a Local Climate Hazard</h2>
+          <p style="color: #64748b; font-size: 0.95rem;">
+            Help simulate rapid disaster reporting. Submit localized climate hazards (e.g. dried community borehole, blocked municipal canal, sudden brush fire, or heat exhaustion outbreak) to generate a tracked dispatch ticket.
+          </p>
+        </div>
+
+        <form id="incidentReportForm" style="max-width: 760px; margin: 0 auto;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+            <div class="form-group">
+              <label for="incidentState" class="form-label">State of Occurrence *</label>
+              <select id="incidentState" class="form-select" required>
+                <option value="">-- Choose State --</option>
+                <option value="Lagos">Lagos State</option>
+                <option value="Kano">Kano State</option>
+                <option value="Rivers">Rivers State</option>
+                <option value="FCT Abuja">FCT Abuja</option>
+                <option value="Kogi">Kogi State</option>
+                <option value="Benue">Benue State</option>
+                <option value="Oyo">Oyo State</option>
+                <option value="Anambra">Anambra State</option>
+                <option value="Borno">Borno State</option>
+                <option value="Kaduna">Kaduna State</option>
+                <option value="Delta">Delta State</option>
+                <option value="Other Nigerian State">Other Nigerian State</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="incidentLga" class="form-label">Local Government Area (LGA) & Town *</label>
+              <input type="text" id="incidentLga" class="form-input" placeholder="e.g. Lokoja LGA, Ganaja Village" required>
+            </div>
+
+            <div class="form-group">
+              <label for="incidentType" class="form-label">Hazard Category *</label>
+              <select id="incidentType" class="form-select" required>
+                <option value="Flash Flooding / Submerged Street">Flash Flooding / Submerged Street</option>
+                <option value="Severe Drought / Dried Community Borehole">Severe Drought / Dried Community Borehole</option>
+                <option value="Spreading Bushfire / Wildfire Threat">Spreading Bushfire / Wildfire Threat</option>
+                <option value="Heatwave Medical Emergency / Sickness Spike">Heatwave Medical Emergency / Sickness Spike</option>
+                <option value="Severely Blocked Main Drainage Canal">Severely Blocked Main Drainage Canal</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="incidentDetails" class="form-label">Incident Details & Exact Location Landmark *</label>
+            <textarea id="incidentDetails" class="form-textarea" rows="3" placeholder="Describe the severity, estimated number of households affected, nearest market or school landmark..." required></textarea>
+          </div>
+
+          <div style="text-align: center;">
+            <button type="submit" class="btn btn-danger" style="padding: 0.85rem 2.2rem;">
+              🚨 Transmit Incident to SEMA / NEMA Simulator
+            </button>
+          </div>
+        </form>
+
+        <div id="incidentFormAlert"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">🌍 Naija ClimateWatch</div>
+          <p class="footer-desc">
+            A public safety and climate intelligence system dedicated to empowering everyday Nigerians with life-saving knowledge, early warnings, and survival guidelines during El Niño cycles.
+          </p>
+          <span class="badge badge-green">Official Citizen Resource</span>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Essential Modules</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Understanding El Niño</a></li>
+            <li><a href="prepare-and-survive.html">3-Phase Survival Guide</a></li>
+            <li><a href="prepare-and-survive.html#whatNotToDo">Critical What NOT To Do</a></li>
+            <li><a href="agencies-and-help.html">SEMA & NEMA Directory</a></li>
+            <li><a href="myths-and-facts.html">Myths vs Scientific Facts</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Key Partner Agencies</h4>
+          <ul class="footer-links">
+            <li><a href="https://nimet.gov.ng" target="_blank" rel="noopener">NIMET (Weather Forecasts)</a></li>
+            <li><a href="https://nema.gov.ng" target="_blank" rel="noopener">NEMA (National Disaster Agency)</a></li>
+            <li><a href="https://ncdc.gov.ng" target="_blank" rel="noopener">NCDC (Disease Outbreak Center)</a></li>
+            <li><a href="https://redcrossnigeria.org" target="_blank" rel="noopener">Nigerian Red Cross Society</a></li>
+            <li><a href="https://fmhds.gov.ng" target="_blank" rel="noopener">Federal Ministry of Humanitarian Affairs</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-emergency-box">
+            <div class="footer-emergency-title">🚨 National Emergency Toll-Free</div>
+            <p style="color: #f1f5f9; font-size: 0.85rem; margin-bottom: 0.75rem;">
+              Call immediately for flash flood rescue, wildfire response, or medical collapse:
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="tel:112" class="badge badge-red" style="font-size: 0.95rem; padding: 0.45rem 0.9rem; text-decoration: none;">📞 Dial 112 (Any Network)</a>
+              <a href="tel:080022556362" class="badge badge-amber" style="font-size: 0.82rem; padding: 0.45rem 0.8rem; text-decoration: none;">NEMA: 0800-CALL-NEMA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Naija ClimateWatch — Built for the safety and resilience of all Nigerian communities.</div>
+        <div>Developed with Vanilla HTML, CSS & JavaScript • Data synthesized from NIMET, NEMA, WMO & WHO.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
